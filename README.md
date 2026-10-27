@@ -37,3 +37,7 @@ Radite na zasebnoj grani, pokrenite provjere i otvorite PR prema `main`. Početn
 ## Sljedeći sadržaj
 
 Predložena struktura: Naslovnica, Kolekcije i materijali, Boja vode, Bazenski sustavi, Projekti, Za arhitekte, O brendu, Kontakt. To je plan sadržaja, a ne već implementiran katalog. Prije javne objave potvrditi tekstove, prava na fotografije, proizvode i potrebne podatke tvrtke.
+
+## Provjere i priprema za hosting
+
+`npm run verify` provjerava formatiranje, izgradnju i rad u Chromiumu na veličinama računala i mobitela. Prije prvog pokretanja: `npx playwright install chromium`. `npm run package:hosting` izrađuje ZIP za cPanel u `release/`. Pristup i postupak opisani su u [docs/hosting.md](docs/hosting.md).

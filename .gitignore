@@ -9,3 +9,7 @@ coverage/
 *.log
 .DS_Store
 .idea/
+playwright-report/
+test-results/
+release/
+.access/
