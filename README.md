@@ -28,7 +28,7 @@ npm run preview     # lokalni pregled izgrađene stranice
 - `docs/brand.md` — izvori, potvrđeni podaci i otvorene stavke.
 - `.github/workflows/ci.yml` — provjera formatiranja i izgradnje svakog PR-a.
 
-Početna stranica prikazuje logo, poruku brenda i izravan kontakt putem e-maila/telefona. Nema poslužitelja, obrasca za slanje ni analitike. Fotografije, katalog i reference dodaju se kada budu dostupni. Izlaz `dist/` može se poslužiti na statičkom hostingu; objava i domena još nisu konfigurirane. Za objavu u podmapi potrebno je podesiti Vite `base`.
+Prva testna verzija ima šest prezentacijskih cjelina, Vidrepur inspiraciju, pregled bazenskih slojeva prema Mapei materijalima i interaktivnu paletu. Obrazac priprema e-mail u posjetiteljevu programu; nema slanja ni pohrane na poslužitelju niti analitike. Prikazani projekti su reference proizvođača, jasno označene na stranici. Izlaz `dist/` može se poslužiti na statičkom hostingu; testna verzija dostupna je na https://test.aquatessera.hr/. Glavna domena nije mijenjana. Za objavu u podmapi potrebno je podesiti Vite `base`.
 
 ## Rad s promjenama
 
@@ -36,7 +36,7 @@ Radite na zasebnoj grani, pokrenite provjere i otvorite PR prema `main`. Početn
 
 ## Sljedeći sadržaj
 
-Predložena struktura: Naslovnica, Kolekcije i materijali, Boja vode, Bazenski sustavi, Projekti, Za arhitekte, O brendu, Kontakt. To je plan sadržaja, a ne već implementiran katalog. Prije javne objave potvrditi tekstove, prava na fotografije, proizvode i potrebne podatke tvrtke.
+Predložena struktura: Naslovnica, Kolekcije i materijali, Boja vode, Bazenski sustavi, Projekti, Za arhitekte, O brendu, Kontakt. Sve su cjeline predstavljene na jednoj stranici; ovo nije prodajni katalog. Prije javne objave potvrditi tekstove, prava na fotografije, proizvode i potrebne podatke tvrtke.
 
 ## Provjere i priprema za hosting
 
