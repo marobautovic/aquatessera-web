@@ -48,6 +48,8 @@ test('unknown manufacturer in collection is rejected', () => {
     ],
   };
   assert.ok(
-    validateCatalog(invalid).some((item) => item.path.endsWith('manufacturerId')),
+    validateCatalog(invalid).some((item) =>
+      item.path.endsWith('manufacturerId'),
+    ),
   );
 });
