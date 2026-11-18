@@ -2,11 +2,11 @@ import type { Catalog, EditorialStatus, Product } from './schema';
 
 export type ValidationIssue = { path: string; message: string };
 
-const isNonEmpty = (value: string | undefined): boolean => Boolean(value?.trim());
+const isNonEmpty = (value: string | undefined): boolean =>
+  Boolean(value?.trim());
 
 const validDate = (value: string): boolean =>
-  /^\d{4}-\d{2}-\d{2}$/.test(value) &&
-  !Number.isNaN(Date.parse(value));
+  /^\d{4}-\d{2}-\d{2}$/.test(value) && !Number.isNaN(Date.parse(value));
 
 const approved = (
   id: string,
@@ -23,7 +23,9 @@ export function publicProducts(catalog: Catalog): Product[] {
       approved(product.categoryId, catalog.categories) &&
       isNonEmpty(product.approvedBy) &&
       Boolean(product.approvedAt && validDate(product.approvedAt)) &&
-      product.images.some((image) => image.rightsApproved && isNonEmpty(image.alt)) &&
+      product.images.some(
+        (image) => image.rightsApproved && isNonEmpty(image.alt),
+      ) &&
       product.evidence.length > 0 &&
       product.evidence.every(
         (item) => isNonEmpty(item.sourceUrl) && validDate(item.checkedAt),
@@ -74,9 +76,14 @@ export function validateCatalog(catalog: Catalog): ValidationIssue[] {
     slugs.add(`collection:${collection.slug}`);
     if (
       collection.status === 'approved' &&
-      !collection.images.some((image) => image.rightsApproved && isNonEmpty(image.alt))
+      !collection.images.some(
+        (image) => image.rightsApproved && isNonEmpty(image.alt),
+      )
     ) {
-      add(`${at}.images`, 'Approved collection needs a licensed image with alt text');
+      add(
+        `${at}.images`,
+        'Approved collection needs a licensed image with alt text',
+      );
     }
   }
 
@@ -123,7 +130,11 @@ export function validateCatalog(catalog: Catalog): ValidationIssue[] {
       ) {
         add(`${at}.approval`, 'Approval name and YYYY-MM-DD date required');
       }
-      if (!product.images.some((image) => image.rightsApproved && isNonEmpty(image.alt))) {
+      if (
+        !product.images.some(
+          (image) => image.rightsApproved && isNonEmpty(image.alt),
+        )
+      ) {
         add(`${at}.images`, 'Licensed image with alt text required');
       }
       if (
