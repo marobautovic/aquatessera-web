@@ -18,13 +18,5 @@ jobs:
           node-version-file: .nvmrc
           cache: npm
       - run: npm ci
-      - name: Temporary formatting extraction
-        run: |
-          echo START_CATALOG_FORMAT
-          npx prettier src/components/catalog.ts | base64 -w0; echo
-          echo END_CATALOG_FORMAT
-          echo START_CSS_FORMAT
-          npx prettier src/styles/main.css | base64 -w0; echo
-          echo END_CSS_FORMAT
       - run: node --experimental-strip-types --test tests/catalog.test.mjs
       - run: npm run check
