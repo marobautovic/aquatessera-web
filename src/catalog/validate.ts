@@ -11,7 +11,8 @@ const validDate = (value: string): boolean =>
 const approved = (
   id: string,
   entries: { id: string; status: EditorialStatus }[],
-): boolean => entries.some((entry) => entry.id === id && entry.status === 'approved');
+): boolean =>
+  entries.some((entry) => entry.id === id && entry.status === 'approved');
 
 /** Only explicitly approved records with approved dependencies may reach the public UI. */
 export function publicProducts(catalog: Catalog): Product[] {
