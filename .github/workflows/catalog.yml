@@ -18,5 +18,7 @@ jobs:
           node-version-file: .nvmrc
           cache: npm
       - run: npm ci
+      - name: Temporary formatting diagnostic
+        run: npx prettier src/catalog/validate.ts | base64 -w0 && echo
       - run: node --experimental-strip-types --test tests/catalog.test.mjs
       - run: npm run check
