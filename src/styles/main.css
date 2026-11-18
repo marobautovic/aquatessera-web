@@ -254,7 +254,7 @@ nav a:hover {
   font-size: 11px;
 }
 .intro-strip span:before {
-  content: 'â³';
+  content: '✳';
   margin-right: 14px;
   color: #91b7b7;
 }
@@ -1035,7 +1035,7 @@ footer {
   }
 }
 
-/* Organic Mediterranean Luxury â editorial layer */
+/* Organic Mediterranean Luxury — editorial layer */
 body {
   background: var(--paper);
   color: var(--ink);
