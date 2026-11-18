@@ -1,0 +1,35 @@
+name: Organic design previews
+
+on:
+  pull_request:
+    paths:
+      - 'src/**'
+      - 'tests/preview.spec.ts'
+      - '.github/workflows/design-preview.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  screenshots:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+      - run: npx playwright install --with-deps chromium
+      - run: npx playwright test tests/preview.spec.ts
+      - name: Upload desktop/mobile previews
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: organic-design-previews
+          path: |
+            test-results/**/organic-homepage.png
+            test-results/**/organic-catalog.png
+          retention-days: 14
+          if-no-files-found: warn

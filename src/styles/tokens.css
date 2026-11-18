@@ -1,8 +1,13 @@
-/* Radne vrijednosti prema dostavljenom logotipu; potvrditi kroz brand book. */
+/* Organic Mediterranean Luxury — radni UI tokeni, originalni logo ostaje neizmijenjen. */
 :root {
-  --navy: #0b3459;
-  --blue: #146b99;
-  --aqua: #60b0ce;
-  --sand: #c5a587;
-  --paper: #f6f3ed;
+  --navy: #093a65;
+  --blue: #2295cc;
+  --aqua: #78aeb6;
+  --sand: #c9a481;
+  --paper: #f6f2ec;
+  --ivory: #fdfbf7;
+  --stone: #e7ded2;
+  --ink: #263b42;
+  --muted: #5e6766;
+  --line: #d8d2c9;
 }
