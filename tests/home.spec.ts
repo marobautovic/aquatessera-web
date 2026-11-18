@@ -8,8 +8,10 @@ test('brand, contact, keyboard access and responsive layout', async ({
   await page.goto('/');
   await expect(page).toHaveTitle(/AquaTessera/);
   await expect(page.getByRole('heading', { level: 1 })).toContainText(
-    'Vaša vizija.',
+    'Materijali koji',
   );
+  await expect(page.getByRole('heading', { name: /Odabrano/ })).toBeVisible();
+  await expect(page.getByText('Detalji su važni.')).toBeVisible();
   const logo = page.getByRole('img', { name: 'AquaTessera', exact: true });
   await expect(logo).toBeVisible();
   expect(
